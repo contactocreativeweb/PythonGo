@@ -1,0 +1,312 @@
+{
+  "modules": [
+    {
+      "id": "variables",
+      "title": "Variables",
+      "icon": "📦",
+      "color": "#6366f1",
+      "colorLight": "#818cf8",
+      "level": "Fácil",
+      "description": "Aprende a guardar y usar datos en Python",
+      "lessons": [
+        {
+          "id": "var-1",
+          "title": "¿Qué es una variable?",
+          "theory": "Una variable es un espacio en memoria donde guardas un valor. En Python no necesitas declarar el tipo, simplemente asigna con el signo =.",
+          "code": "nombre = \"Ana\"\nedad = 25\nprint(nombre, edad)",
+          "exercise": {
+            "type": "quiz",
+            "question": "¿Cuál es la forma correcta de crear una variable en Python?",
+            "options": ["var nombre = 'Ana'", "nombre = 'Ana'", "string nombre = 'Ana'", "let nombre = 'Ana'"],
+            "answer": 1,
+            "explanation": "En Python simplemente escribes el nombre de la variable seguido de = y el valor. No se necesita declarar el tipo."
+          }
+        },
+        {
+          "id": "var-2",
+          "title": "Tipos de datos básicos",
+          "theory": "Python tiene 4 tipos básicos: int (enteros), float (decimales), str (texto entre comillas) y bool (True/False).",
+          "code": "edad = 20          # int\naltura = 1.75      # float\nnombre = \"Python\"  # str\nactivo = True      # bool",
+          "exercise": {
+            "type": "fill",
+            "question": "Completa el código para crear una variable de texto:",
+            "before": "saludo = ",
+            "answer": "\"Hola\"",
+            "hint": "Los strings van entre comillas dobles o simples",
+            "explanation": "Los strings (cadenas de texto) se encierran entre comillas simples '' o dobles \"\"."
+          }
+        },
+        {
+          "id": "var-3",
+          "title": "Operaciones con variables",
+          "theory": "Puedes sumar, restar, multiplicar y dividir variables numéricas. También puedes concatenar strings con +.",
+          "code": "a = 10\nb = 3\nprint(a + b)   # 13\nprint(a * b)   # 30\nprint(a / b)   # 3.33\nprint(a // b)  # 3 (división entera)",
+          "exercise": {
+            "type": "order",
+            "question": "Ordena las líneas para calcular el área de un rectángulo:",
+            "lines": ["print(area)", "largo = 10", "area = largo * ancho", "ancho = 5"],
+            "answer": [1, 3, 2, 0],
+            "explanation": "Primero defines las variables, luego calculas el área, y finalmente la imprimes."
+          }
+        },
+        {
+          "id": "var-4",
+          "title": "Nombrar variables",
+          "theory": "Las variables deben: empezar con letra o _, no tener espacios, ser descriptivas. Por convención se usa snake_case.",
+          "code": "# Bien ✓\nmi_nombre = \"Carlos\"\nedad_usuario = 30\n\n# Mal ✗\n# 1variable = \"x\"  # no puede empezar con número\n# mi nombre = \"x\"  # no puede tener espacios",
+          "exercise": {
+            "type": "quiz",
+            "question": "¿Cuál de estos nombres de variable es INVÁLIDO en Python?",
+            "options": ["mi_variable", "_privada", "2numero", "camelCase"],
+            "answer": 2,
+            "explanation": "Las variables no pueden comenzar con un número. '2numero' es inválida."
+          }
+        },
+        {
+          "id": "var-5",
+          "title": "La función type()",
+          "theory": "Usa type() para saber el tipo de una variable. Esto es útil para depurar tu código.",
+          "code": "x = 42\nprint(type(x))      # <class 'int'>\n\ny = \"hola\"\nprint(type(y))      # <class 'str'>\n\nz = 3.14\nprint(type(z))      # <class 'float'>",
+          "exercise": {
+            "type": "quiz",
+            "question": "¿Qué devuelve type(3.14)?",
+            "options": ["<class 'int'>", "<class 'str'>", "<class 'float'>", "<class 'double'>"],
+            "answer": 2,
+            "explanation": "3.14 es un número decimal, por lo que su tipo es float."
+          }
+        }
+      ]
+    },
+    {
+      "id": "condicionales",
+      "title": "Condicionales",
+      "icon": "🔀",
+      "color": "#f59e0b",
+      "colorLight": "#fbbf24",
+      "level": "Fácil",
+      "description": "Toma decisiones en tu código con if/else",
+      "lessons": [
+        {
+          "id": "cond-1",
+          "title": "El if básico",
+          "theory": "if ejecuta un bloque de código si la condición es True. Python usa indentación (4 espacios) para definir el bloque.",
+          "code": "edad = 18\n\nif edad >= 18:\n    print(\"Eres mayor de edad\")\n    print(\"Puedes votar\")",
+          "exercise": {
+            "type": "quiz",
+            "question": "En Python, ¿cómo se delimita el bloque de código dentro de un if?",
+            "options": ["Con llaves {}", "Con paréntesis ()", "Con indentación", "Con BEGIN/END"],
+            "answer": 2,
+            "explanation": "Python usa indentación (espacios o tabs) para delimitar bloques de código, no llaves."
+          }
+        },
+        {
+          "id": "cond-2",
+          "title": "if / else",
+          "theory": "Usa else para ejecutar código cuando la condición del if es False. Solo uno de los dos bloques se ejecuta.",
+          "code": "temperatura = 15\n\nif temperatura > 25:\n    print(\"Hace calor\")\nelse:\n    print(\"Hace frío\")",
+          "exercise": {
+            "type": "fill",
+            "question": "Completa para que imprima 'Aprobado' si nota >= 60:",
+            "before": "if nota >= 60:\n    print('Aprobado')\n",
+            "answer": "else:",
+            "hint": "La palabra clave para el caso contrario",
+            "explanation": "else: se ejecuta cuando la condición del if es falsa."
+          }
+        },
+        {
+          "id": "cond-3",
+          "title": "elif — múltiples condiciones",
+          "theory": "elif (else if) te permite encadenar múltiples condiciones. Se evalúan en orden y solo se ejecuta el primero True.",
+          "code": "nota = 75\n\nif nota >= 90:\n    print(\"Excelente\")\nelif nota >= 70:\n    print(\"Bien\")\nelif nota >= 60:\n    print(\"Suficiente\")\nelse:\n    print(\"Reprobado\")",
+          "exercise": {
+            "type": "order",
+            "question": "Ordena las líneas para clasificar una temperatura:",
+            "lines": ["elif temp < 20:", "if temp < 0:", "    print('Frío')", "    print('Congelante')"],
+            "answer": [1, 3, 0, 2],
+            "explanation": "Primero va el if con la condición más extrema, luego elif para las siguientes condiciones."
+          }
+        },
+        {
+          "id": "cond-4",
+          "title": "Operadores de comparación",
+          "theory": "Python tiene 6 operadores: == (igual), != (diferente), > (mayor), < (menor), >= (mayor o igual), <= (menor o igual).",
+          "code": "a, b = 10, 20\nprint(a == b)   # False\nprint(a != b)   # True\nprint(a < b)    # True\nprint(a >= b)   # False",
+          "exercise": {
+            "type": "quiz",
+            "question": "¿Cuál operador verifica si dos valores son IGUALES?",
+            "options": ["=", "==", "!=", "==="],
+            "answer": 1,
+            "explanation": "== compara igualdad. Un solo = es para asignar valores, no comparar."
+          }
+        },
+        {
+          "id": "cond-5",
+          "title": "Operadores lógicos",
+          "theory": "and (ambos True), or (al menos uno True), not (invierte). Combinan condiciones en una sola expresión.",
+          "code": "edad = 25\ncarnet = True\n\nif edad >= 18 and carnet:\n    print(\"Puede conducir\")\n\nif edad < 16 or not carnet:\n    print(\"No puede conducir\")",
+          "exercise": {
+            "type": "quiz",
+            "question": "¿Qué resultado da: True and False?",
+            "options": ["True", "False", "None", "Error"],
+            "answer": 1,
+            "explanation": "and requiere que AMBAS condiciones sean True. Como una es False, el resultado es False."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bucles",
+      "title": "Bucles",
+      "icon": "🔄",
+      "color": "#10b981",
+      "colorLight": "#34d399",
+      "level": "Intermedio",
+      "description": "Repite acciones con for y while",
+      "lessons": [
+        {
+          "id": "loop-1",
+          "title": "El bucle for",
+          "theory": "for itera sobre una secuencia (lista, string, range). En cada iteración, la variable toma el siguiente valor.",
+          "code": "frutas = [\"manzana\", \"pera\", \"uva\"]\n\nfor fruta in frutas:\n    print(fruta)\n\n# Imprime: manzana, pera, uva",
+          "exercise": {
+            "type": "quiz",
+            "question": "¿Cuántas veces se ejecuta el cuerpo de: for i in range(5)?",
+            "options": ["4 veces", "5 veces", "6 veces", "Infinitas veces"],
+            "answer": 1,
+            "explanation": "range(5) genera los números 0,1,2,3,4 — exactamente 5 valores."
+          }
+        },
+        {
+          "id": "loop-2",
+          "title": "range() en for",
+          "theory": "range(inicio, fin, paso) genera números. range(5) da 0-4. range(1,6) da 1-5. range(0,10,2) da 0,2,4,6,8.",
+          "code": "# Del 1 al 5\nfor i in range(1, 6):\n    print(i)\n\n# Pares del 0 al 8\nfor i in range(0, 10, 2):\n    print(i)",
+          "exercise": {
+            "type": "fill",
+            "question": "Completa para iterar del 1 al 10:",
+            "before": "for i in range(",
+            "answer": "1, 11)",
+            "hint": "range(inicio, fin) — fin es exclusivo",
+            "explanation": "range(1, 11) genera 1,2,3,...,10. El fin (11) es exclusivo."
+          }
+        },
+        {
+          "id": "loop-3",
+          "title": "El bucle while",
+          "theory": "while ejecuta el bloque mientras la condición sea True. Asegúrate de que la condición eventualmente sea False para evitar bucles infinitos.",
+          "code": "contador = 0\n\nwhile contador < 5:\n    print(contador)\n    contador += 1\n\nprint(\"Fin\")",
+          "exercise": {
+            "type": "quiz",
+            "question": "¿Qué sucede si la condición del while nunca se vuelve False?",
+            "options": ["El programa termina solo", "Se crea un bucle infinito", "Python da un error", "Solo se ejecuta 100 veces"],
+            "answer": 1,
+            "explanation": "Un while con condición siempre True genera un bucle infinito. Siempre modifica algo dentro del bucle."
+          }
+        },
+        {
+          "id": "loop-4",
+          "title": "break y continue",
+          "theory": "break termina el bucle inmediatamente. continue salta a la siguiente iteración ignorando el resto del cuerpo.",
+          "code": "# break — sale del bucle\nfor i in range(10):\n    if i == 5:\n        break\n    print(i)  # 0,1,2,3,4\n\n# continue — salta la iteración\nfor i in range(5):\n    if i == 2:\n        continue\n    print(i)  # 0,1,3,4",
+          "exercise": {
+            "type": "order",
+            "question": "Ordena para imprimir solo números impares del 1 al 9:",
+            "lines": ["for i in range(1, 10):", "    if i % 2 == 0:", "        continue", "    print(i)"],
+            "answer": [0, 1, 2, 3],
+            "explanation": "Iteramos del 1 al 9, saltamos los pares con continue, e imprimimos los impares."
+          }
+        },
+        {
+          "id": "loop-5",
+          "title": "enumerate() y zip()",
+          "theory": "enumerate() da el índice y valor en cada iteración. zip() combina dos listas en pares.",
+          "code": "frutas = [\"manzana\", \"pera\", \"uva\"]\n\nfor i, fruta in enumerate(frutas):\n    print(f\"{i}: {fruta}\")\n# 0: manzana / 1: pera / 2: uva\n\nprecios = [1.5, 2.0, 3.0]\nfor f, p in zip(frutas, precios):\n    print(f\"{f}: ${p}\")",
+          "exercise": {
+            "type": "quiz",
+            "question": "¿Qué imprime enumerate(['a','b','c']) en su primer elemento?",
+            "options": ["'a'", "0", "(0, 'a')", "1"],
+            "answer": 2,
+            "explanation": "enumerate devuelve tuplas (índice, valor). El primer elemento es (0, 'a')."
+          }
+        }
+      ]
+    },
+    {
+      "id": "listas",
+      "title": "Listas",
+      "icon": "📋",
+      "color": "#ef4444",
+      "colorLight": "#f87171",
+      "level": "Intermedio",
+      "description": "Colecciones ordenadas y modificables",
+      "lessons": [
+        {
+          "id": "list-1",
+          "title": "Crear y acceder listas",
+          "theory": "Las listas en Python se crean con []. Puedes acceder a elementos por índice (empieza en 0). Índices negativos acceden desde el final.",
+          "code": "frutas = [\"manzana\", \"pera\", \"uva\"]\n\nprint(frutas[0])   # manzana\nprint(frutas[1])   # pera\nprint(frutas[-1])  # uva (último)",
+          "exercise": {
+            "type": "quiz",
+            "question": "En la lista [10, 20, 30, 40], ¿qué devuelve lista[-1]?",
+            "options": ["10", "40", "30", "Error"],
+            "answer": 1,
+            "explanation": "El índice -1 siempre accede al último elemento. lista[-1] = 40."
+          }
+        },
+        {
+          "id": "list-2",
+          "title": "Métodos de listas",
+          "theory": "append() agrega al final. insert() agrega en posición. remove() borra por valor. pop() borra por índice. len() da el tamaño.",
+          "code": "mi_lista = [1, 2, 3]\n\nmi_lista.append(4)      # [1,2,3,4]\nmi_lista.insert(0, 0)   # [0,1,2,3,4]\nmi_lista.remove(2)      # [0,1,3,4]\nultimo = mi_lista.pop() # [0,1,3]\nprint(len(mi_lista))    # 3",
+          "exercise": {
+            "type": "fill",
+            "question": "Completa para añadir 'python' al final de la lista:",
+            "before": "lenguajes = ['java', 'c++']\nlenguajes.",
+            "answer": "append('python')",
+            "hint": "El método que agrega al final de la lista",
+            "explanation": "append() agrega un elemento al final de la lista."
+          }
+        },
+        {
+          "id": "list-3",
+          "title": "Slicing de listas",
+          "theory": "El slicing [inicio:fin:paso] extrae sublistas. Puedes omitir cualquier parte. El fin es exclusivo.",
+          "code": "nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\nprint(nums[2:5])    # [2, 3, 4]\nprint(nums[:3])     # [0, 1, 2]\nprint(nums[7:])     # [7, 8, 9]\nprint(nums[::2])    # [0, 2, 4, 6, 8]\nprint(nums[::-1])   # reversa",
+          "exercise": {
+            "type": "quiz",
+            "question": "¿Qué devuelve [1,2,3,4,5][1:4]?",
+            "options": ["[1, 2, 3, 4]", "[2, 3, 4]", "[2, 3, 4, 5]", "[1, 2, 3]"],
+            "answer": 1,
+            "explanation": "El slicing [1:4] toma desde el índice 1 hasta el 3 (4 es exclusivo): [2, 3, 4]."
+          }
+        },
+        {
+          "id": "list-4",
+          "title": "List comprehension",
+          "theory": "Una forma elegante y Pythónica de crear listas usando una sola línea. Muy usada en código real.",
+          "code": "# Forma tradicional\ncuadrados = []\nfor i in range(5):\n    cuadrados.append(i**2)\n\n# Con list comprehension\ncuadrados = [i**2 for i in range(5)]\nprint(cuadrados)  # [0, 1, 4, 9, 16]\n\n# Con condición\npares = [x for x in range(10) if x % 2 == 0]",
+          "exercise": {
+            "type": "order",
+            "question": "Ordena para crear una lista con el doble de cada número:",
+            "lines": ["numeros = [1, 2, 3, 4, 5]", "print(dobles)", "dobles = [x*2 for x in numeros]"],
+            "answer": [0, 2, 1],
+            "explanation": "Primero defines la lista original, luego creas la comprehension, y finalmente imprimes."
+          }
+        },
+        {
+          "id": "list-5",
+          "title": "sort() y sorted()",
+          "theory": "sort() ordena la lista en su lugar (modifica la original). sorted() devuelve una nueva lista ordenada sin modificar la original.",
+          "code": "nums = [3, 1, 4, 1, 5, 9, 2]\n\nnums.sort()\nprint(nums)  # [1, 1, 2, 3, 4, 5, 9]\n\nnombres = [\"Carlos\", \"Ana\", \"Beatriz\"]\norden = sorted(nombres)\nprint(orden)  # ['Ana', 'Beatriz', 'Carlos']\nprint(nombres)  # Sin cambios",
+          "exercise": {
+            "type": "quiz",
+            "question": "¿Cuál es la diferencia entre sort() y sorted()?",
+            "options": ["Son idénticos", "sort() modifica la lista original, sorted() devuelve una nueva", "sorted() es más rápido", "sort() funciona solo con números"],
+            "answer": 1,
+            "explanation": "sort() modifica la lista in-place. sorted() crea y devuelve una nueva lista ordenada."
+          }
+        }
+      ]
+    }
+  ]
+}

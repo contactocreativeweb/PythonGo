@@ -1,0 +1,19 @@
+{
+  "name": "PythonGo — Aprende Python",
+  "short_name": "PythonGo",
+  "description": "Aprende Python desde tu móvil con ejercicios interactivos estilo Duolingo",
+  "theme_color": "#6366f1",
+  "background_color": "#0f0f1a",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
