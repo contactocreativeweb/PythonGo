@@ -81,6 +81,60 @@ export default function Home() {
             </div>
           )}
 
+          {!user && (
+            <div style={{ display: 'flex', gap: 10, marginTop: 10 }}>
+              <button 
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: 'PythonGo',
+                      text: 'Aprende Python paso a paso desde tu celular',
+                      url: window.location.origin
+                    });
+                  } else {
+                    navigator.clipboard.writeText(window.location.origin);
+                    alert('¡Enlace copiado al portapapeles!');
+                  }
+                }}
+                style={{
+                  padding: '10px 18px', borderRadius: 100,
+                  background: 'rgba(255, 255, 255, 0.05)', border: '1px dashed rgba(255, 255, 255, 0.3)',
+                  color: '#fff', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer',
+                  backdropFilter: 'blur(10px)', flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6
+                }}
+              >
+                ↗️ Compartir
+              </button>
+            </div>
+          )}
+
+          {user && (
+            <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
+              <button 
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: 'PythonGo',
+                      text: '¡Mira mi progreso aprendiendo Python en PythonGo!',
+                      url: window.location.origin
+                    });
+                  } else {
+                    navigator.clipboard.writeText(window.location.origin);
+                    alert('¡Enlace copiado al portapapeles!');
+                  }
+                }}
+                style={{
+                  padding: '10px 18px', borderRadius: 100,
+                  background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)',
+                  color: '#fff', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer',
+                  backdropFilter: 'blur(10px)', flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6
+                }}
+              >
+                ↗️ Compartir PythonGo
+              </button>
+            </div>
+          )}
+
           <div className="hero-emoji">
             {user?.photoURL ? (
               <img 
@@ -158,6 +212,11 @@ export default function Home() {
           </div>
         );
       })}
+
+      {/* Footer Copyright */}
+      <div style={{ textAlign: 'center', padding: '20px 20px 0', fontSize: '12px', color: 'var(--text-muted)', fontWeight: 500 }}>
+        © Creativeweb IA 2026 - Todos los Derechos Reservados
+      </div>
     </div>
   );
 }

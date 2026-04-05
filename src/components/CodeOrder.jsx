@@ -128,6 +128,9 @@ export default function CodeOrder({ exercise, onComplete }) {
           <div>
             <div className="feedback-title">Orden incorrecto — intenta de nuevo</div>
             <div className="feedback-text">
+              <div style={{ marginBottom: 4 }}>
+                <strong>Pista:</strong> {exercise.hint || exercise.explanation || 'Revisa la teoría antes de intentarlo de nuevo.'}
+              </div>
               Te quedan <strong>{attemptsLeft}</strong> intento{attemptsLeft !== 1 ? 's' : ''}.
             </div>
           </div>

@@ -107,15 +107,33 @@ const InstallPWA = () => {
             </div>
 
             <div className="install-modal-steps">
-              <div className="install-step">
-                <div className="install-step-num">1</div>
-                <div className="install-step-text">Toca el botón **Compartir** en Safari</div>
-                <div className="install-step-icon">⎋</div>
-              </div>
-              <div className="install-step">
-                <div className="install-step-num">2</div>
-                <div className="install-step-text">Desliza hacia abajo y elige **"Añadir a pantalla de inicio"**</div>
-                <div className="install-step-icon">⊕</div>
+              {isIOS ? (
+                <>
+                  <div className="install-step">
+                    <div className="install-step-num">1</div>
+                    <div className="install-step-text">Toca el botón **Compartir** en Safari</div>
+                    <div className="install-step-icon">⎋</div>
+                  </div>
+                  <div className="install-step">
+                    <div className="install-step-num">2</div>
+                    <div className="install-step-text">Desliza hacia abajo y elige **"Añadir a pantalla de inicio"**</div>
+                    <div className="install-step-icon">⊕</div>
+                  </div>
+                </>
+              ) : (
+                <div className="install-step">
+                  <div className="install-step-num">1</div>
+                  <div className="install-step-text">Abre el menú de tu navegador (tres puntos) y elige **"Añadir a pantalla de inicio"** o **"Instalar aplicación"**.</div>
+                  <div className="install-step-icon">⋮</div>
+                </div>
+              )}
+              <div className="install-step" style={{ marginTop: 10, cursor: 'pointer' }} onClick={() => {
+                navigator.clipboard.writeText(window.location.host);
+                alert('¡Enlace copiado! Ábrelo en tu navegador para instalar.');
+              }}>
+                <div className="install-step-num" style={{ background: 'var(--accent)' }}>3</div>
+                <div className="install-step-text">¿No encuentras la opción? <strong>Copia el enlace de la app</strong> y pégalo en tu navegador (Safari/Chrome).</div>
+                <div className="install-step-icon">📋</div>
               </div>
             </div>
 

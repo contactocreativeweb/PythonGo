@@ -18,7 +18,10 @@ export function AppProvider({ children }) {
   const [state, setState] = useState(() => {
     try {
       const saved = localStorage.getItem('pythongo_state');
-      if (saved) return { ...defaultState, ...JSON.parse(saved) };
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        return { ...defaultState, ...parsed, darkMode: false };
+      }
     } catch {}
     return defaultState;
   });

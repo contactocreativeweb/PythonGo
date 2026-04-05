@@ -112,6 +112,9 @@ export default function Quiz({ exercise, onComplete }) {
           <div>
             <div className="feedback-title">Incorrecto — intenta de nuevo</div>
             <div className="feedback-text">
+              <div style={{ marginBottom: 4 }}>
+                <strong>Pista:</strong> {exercise.explanation || 'Revisa la teoría de la lección antes de intentarlo de nuevo.'}
+              </div>
               Te quedan <strong>{attemptsLeft}</strong> intento{attemptsLeft !== 1 ? 's' : ''}.
             </div>
           </div>

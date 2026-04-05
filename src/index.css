@@ -43,15 +43,15 @@
 }
 
 .light-mode {
-  --bg-primary: #f0f4ff;
-  --bg-secondary: #e8eeff;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
   --bg-card: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.8);
-  --border-glass: rgba(100, 100, 200, 0.15);
+  --bg-glass: rgba(255, 255, 255, 0.95);
+  --border-glass: #3b82f6;
   
-  --text-primary: #1a1a3e;
-  --text-secondary: #4040a0;
-  --text-muted: #8080c0;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
 }
 
 /* ===== RESET ===== */
